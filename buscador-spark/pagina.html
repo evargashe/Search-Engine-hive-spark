@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Detalle</title>
+</head>
+<body>
+    <h1>Detalle de Página</h1>
+    <div id="pageDetails">
+        <h2 id="pageTitle"></h2>
+        <p id="pageText"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Leer los datos de sessionStorage
+            const pageTitle = sessionStorage.getItem('pageTitle');
+            const pageText = sessionStorage.getItem('pageText');
+
+            // Mostrar los detalles de la página en la página de detalle
+            document.getElementById('pageTitle').textContent = pageTitle;
+            document.getElementById('pageText').textContent = pageText;
+        });
+    </script>
+</body>
+</html>
