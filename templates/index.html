@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4285f4; 
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: none;
+        }
+        input[type="text"] {
+            width: 300px;
+            height: 36px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #dfe1e5; /* Color de borde de Google */
+            border-radius: 24px;
+            outline: none;
+            margin-right: 10px;
+            box-shadow: 0 0 0 1px #dfe1e5; /* Efecto de enfoque de Google */
+        }
+        button[type="submit"] {
+            background-color: #4285f4; /* Color de Google */
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #357ae8; /* Color de hover de Google */
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var searchTerm = document.getElementById('search_term').value.trim();
+            if (searchTerm === '') {
+                window.alert ('Por favor, escriba una palabra para la busqueda.');
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Buscador Lujan Carrion</h1>
+        <form action="/search" method="POST" onsubmit="return validateForm()">
+            <label for="search_term">Buscar palabra:</label>
+            <input type="text" id="search_term" name="search_term" autofocus>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</body>
+</html>
